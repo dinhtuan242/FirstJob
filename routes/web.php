@@ -11,15 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('admin.dashboard');
-})->name('index');
-Route::get('/login', function () {
-    return view('admin.pages.login');
-})->name('login');
-Route::get('/register', function () {
-    return view('admin.pages.register');
-})->name('register');
-Route::get('/forgot', function () {
-    return view('admin.pages.forgotpassword');
-})->name('forgot_password');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard.index');
+    Route::get('/login', function () {
+        return view('admin.pages.login');
+    })->name('login');
+    Route::get('/register', function () {
+        return view('admin.pages.register');
+    })->name('register');
+    Route::get('/forgot', function () {
+        return view('admin.pages.forgotpassword');
+    })->name('forgot_password');
+});
+Route::group(['prefix' => 'home'], function () {
+    Route::get('/', function () {
+        return view('frontend.pages.index');
+    })->name('frontend.index');
+    Route::get('/account', function () {
+        return view('frontend.pages.account');
+    })->name('frontend.account');
+});

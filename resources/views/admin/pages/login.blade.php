@@ -4,8 +4,8 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="{{ route('index') }}">
-                        <img class="align-content" src="{{ asset('bower_components/bower-firstjob/images/logo.png') }}" alt="">
+                    <a href="{{ route('dashboard.index') }}">
+                        <img class="align-content" src="{{ asset('bower_components/bower-firstjob/admin/images/logo.png') }}" alt="">
                     </a>
                 </div>
                 <div class="login-form">
